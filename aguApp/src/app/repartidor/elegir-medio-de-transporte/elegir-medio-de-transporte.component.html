@@ -1,0 +1,59 @@
+<html>
+    <div>
+      <app-navbar-repartido></app-navbar-repartido>
+    </div>
+    
+    <div class="d-flex flex-column justify-content-center" >
+
+      <div class="card " style="width:100%; margin-top:5px;" >
+        <img 
+          class="card-img-top" 
+          src="https://www.flaticon.es/svg/static/icons/svg/1496/1496200.svg" 
+          alt="Card image cap"
+          style="width:70px; height:70px; border:20%; margin:auto;"
+        >
+        <div class="card-body">
+          <h5 class="card-title">Triciclo</h5>
+          <div class="d-flex flex-row">
+            <div style="width:100%;">
+              <button 
+                type="button" 
+                style="width:100%;" 
+                class="btn btn-primary"
+                (click)="triciclo()"
+              >
+                activar ruta
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="width:100%; margin-top:5px">
+        <img 
+          class="card-img-top" 
+          src="https://www.flaticon.es/svg/static/icons/svg/862/862811.svg" 
+          alt="Card image cap"
+          style="width:70px; height:70px; border:20%; margin:auto;"
+        >
+        <div class="card-body">
+          <h5 class="card-title">vehículo</h5>
+          <div class="d-flex flex-row">
+            <div style="width:100%;">
+              <button 
+                type="button" 
+                style="width:100%;" 
+                class="btn btn-primary"
+                (click)="vehiculo()"
+              >
+                activar ruta
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+      
+    
+</html>

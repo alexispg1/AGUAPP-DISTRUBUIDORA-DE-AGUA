@@ -1,0 +1,72 @@
+html {
+    background: url(../../assets/background.svg) no-repeat fixed center center #fff;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+html {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+@media only screen and (max-width:812px){
+    .container{
+        width:100%;
+        background-color:black;
+    }
+    #card{
+        display:block;
+    }
+    mat-form-field{
+        width:100%;
+    }
+    .container_buttons{
+        display: flex;
+        flex-direction:column;
+        justify-content:space-around;
+    }
+    .item_buttons{
+        width:100%;
+        margin-top:2px;
+    }
+    .buttons{
+        width:100%;
+    }
+}
+
+@media only screen and (min-width:812px){
+
+    .container{
+        margin:auto;
+        display: flex;
+        flex-direction:row;
+        justify-content:center;
+        width:100%;
+    }
+    .item{
+        margin-top:8px;
+        width:40%;
+    }
+    #card{
+        display:block;
+    }
+    mat-form-field{
+        width:100%;
+    }
+    .container_buttons{
+        display: flex;
+        flex-direction:column;
+        justify-content:flex-start;
+
+    }
+    .item_buttons{
+        width:100%;
+        margin-top:2px;
+    }
+    .buttons{
+        width:100%;
+    }
+    
+}

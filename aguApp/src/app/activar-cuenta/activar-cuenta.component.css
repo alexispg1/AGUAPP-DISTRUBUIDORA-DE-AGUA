@@ -1,0 +1,54 @@
+html {
+    background: url(../../assets/background.svg) no-repeat fixed center center #fff;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+html {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+@media only screen and (max-width:812px){
+    .container{
+        width:100%;
+        display: flex;
+        flex-direction: row;
+    }
+    .item{
+        width:100%;
+    }
+    mat-form-field{
+        width:100%;
+    }
+    button{
+        width:100%;
+    }
+}
+
+@media only screen and (min-width:812px){
+
+    .container{
+        display: flex;
+        flex-direction:row;
+        justify-content:center;
+    }
+    .item{
+        margin-top:8px;
+        width:30%;
+    }
+    mat-form-field{
+       width:100%; 
+    }
+    button{
+        width:100%;
+    }
+   
+    
+}
+
+
+
+

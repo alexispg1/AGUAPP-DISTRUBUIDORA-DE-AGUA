@@ -1,0 +1,61 @@
+<html>
+    <div class="header">
+        <app-toolbar></app-toolbar>
+    </div>
+    <div class="container">
+        <div class="item">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-subtitle>recupera tu cuenta</mat-card-subtitle>
+                </mat-card-header>
+                <form [formGroup]="profile">
+                    <mat-form-field appearance="fill">
+                        <mat-label>nueva contraseña</mat-label>
+                        <input 
+                            matInput [type]="hide ? 'password' : 'text'"
+                            formControlName="password"
+                        >
+                        <button 
+                            mat-icon-button matSuffix 
+                            (click)="hide = !hide" 
+                            [attr.aria-label]="'Hide password'" 
+                            [attr.aria-pressed]="hide">
+                            <mat-icon>
+                            {{hide ? 'visibility_off' : 'visibility'}}
+                            </mat-icon>
+                        </button>
+                        <mat-error *ngIf="isValidField('password')">
+                            {{getErrorMessage("password")}}
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill">
+                        <mat-label>confirma tu nueva contraseña</mat-label>
+                        <input  
+                            matInput [type]="hide ? 'password' : 'text'"  
+                            formControlName="confirmation_password"
+                        >
+                        <button 
+                            mat-icon-button 
+                            matSuffix (click)="hide = !hide" 
+                            [attr.aria-label]="'Hide password'" 
+                            [attr.aria-pressed]="hide">
+                            <mat-icon>
+                                {{hide ? 'visibility_off' : 'visibility'}}
+                            </mat-icon>
+                        </button>
+                        <mat-error *ngIf="isValidField('confirmation_password')">
+                            {{getErrorMessage("confirmation_password")}}
+                        </mat-error>
+                    </mat-form-field>
+                </form>
+                <div class="contanier_item">
+                    <div class="son_item">
+                        <button (click)="send_data()" mat-raised-button color="primary">cambiar contraseña</button>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</html>
+

@@ -1,0 +1,55 @@
+
+html {
+    background: url(../../assets/background.svg) no-repeat fixed center center #fff;
+     /**max-height: 100%;**/
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+html {
+    overflow-y: hidden;
+    overflow-x: scroll;
+    overflow-x: hidden;
+ }
+@media only screen and (max-width:812px){
+    .card{
+        margin:auto;
+        margin-top:auto;
+        display: block;
+        margin-top:0.5rem;
+    }
+
+    .button_register_login{
+        display:block;
+        width: 100%;
+        margin-top:0.5rem;
+    }
+    
+    mat-form-field {
+        width: 100%;
+    }
+    
+}
+
+@media only screen and (min-width:812px){
+    .card{
+        margin-top:auto;
+        display:block;
+        margin-left:35%;
+        width:35%;
+        margin-top:2rem;
+    
+    }
+    
+    mat-form-field {
+        width: 100%;
+    }
+    
+    .button_register_login{
+        display:block;
+        width: 100%;
+        margin-top:0.5rem;
+    }
+}

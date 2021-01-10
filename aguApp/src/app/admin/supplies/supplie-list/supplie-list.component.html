@@ -1,0 +1,56 @@
+<html>
+  <mat-toolbar>
+    <mat-toolbar-row>
+      <span class="example-spacer"></span>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <!--<mat-icon>menu</mat-icon>-->
+      </button>
+      <span>
+        <h2>Insumos</h2>
+      </span>
+    </mat-toolbar-row>
+</mat-toolbar>
+ <br><br>
+
+ <div class="container">
+        <div class="item">
+            <mat-card id="card">
+              
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <!--<h2>Insumos</h2>-->
+    </div>
+    <button type="button" color="primary" class="btn btn-success" (click)="add()">Agregar</button>
+    <button type="button" color="primary" class="btn btn-danger" (click)="menu()">Regresar</button>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Num</th>
+            <th>Consumibles</th>
+            <th>Proveedor</th>
+            <th>Disponibilidad</th>
+          </tr>
+        </thead>
+        <tbody>
+        
+          <tr *ngFor="let supplie of lista">
+            <td>{{supplie.id}}</td>
+            <td>{{supplie.consumibles}}</td>
+            <td>{{supplie.id_proveedores}}</td>
+            <td>{{supplie.cantidad}}</td>
+            <td><button (click)="deleteSupplie(supplie.id)" class="btn btn-danger">Borrar</button>
+                <button (click)="updateSupplie(supplie.id)" class="btn btn-info" style="margin-left: 10px">Editar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+            </mat-card>
+       </div>
+  </div>
+
+
+
+</html>

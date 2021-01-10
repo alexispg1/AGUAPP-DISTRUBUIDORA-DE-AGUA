@@ -1,0 +1,61 @@
+<html>
+    <app-toolbar></app-toolbar>
+    <div class="p-2">
+
+        <div class="container mt-3">
+            <h5 class="text-uppercase">Su orden ha sido procesada</h5><br>
+
+            <button mat-raised-button color="primary" (click)="addMore()">
+                Agregar mas servicios
+            </button>
+
+            <mat-card routerLink="/order-steps/fecha-hora"  class="mb-2">
+                <mat-card-header>
+                    Total
+                </mat-card-header>
+                <mat-icon>attach_money</mat-icon>
+                {{total | currency}}
+            </mat-card>
+
+            <mat-card routerLink="/order-steps/ubicaciones" class="mb-2 d-flex pointer">
+                <mat-card-header>
+                    Dirección de entrega
+                </mat-card-header>
+                <mat-icon >place</mat-icon>
+                {{order.address}}
+            </mat-card>
+
+            <mat-card routerLink="/order-steps/fecha-hora"  class="mb-2">
+                <mat-card-header>
+                    Fecha de entrega
+                </mat-card-header>
+                <mat-icon matSuffix>date_range</mat-icon>
+                {{order.fechaOrden}}
+            </mat-card>
+
+            <mat-card routerLink="/order-steps/repartidores" class="mb-2 d-flex text-center pointer">
+                <mat-card-header>
+                    Repartidor seleccionado
+                </mat-card-header>
+                <img style="width:100px; height: 100px; border-radius: 50%; margin:auto;" src="https://www.flaticon.es/svg/static/icons/svg/3827/3827365.svg" alt=""> <br>
+                <mat-icon matSuffix>person</mat-icon>
+                {{order.nombreRepartidor}}  {{order.apellidoRepartidor}} <br>
+            </mat-card>
+
+            <div class="mt-2"></div>
+
+            <h3 class="text-uppercase">Servicios</h3>
+
+            <mat-card class="mb-2 d-flex text-center pointer" *ngFor="let servicio of servicios">
+                <img style="width:100px; height: 100px; margin:auto;" src="https://www.flaticon.es/svg/static/icons/svg/1777/1777282.svg" alt=""> <br>
+                {{servicio.descripcion}} <br>
+                <span class="text-bold mt-1">Cantidad: {{servicio.cantidad}}</span> <br>
+                <span class="text-bold mt-1">Subtotal: {{servicio.subtotal | currency}}</span>
+            </mat-card>
+
+            <button mat-raised-button color="primary" (click)="backMenu()">
+                Regresar al menu
+            </button>
+        </div>
+    </div>
+</html>

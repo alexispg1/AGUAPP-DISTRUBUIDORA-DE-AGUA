@@ -1,0 +1,32 @@
+
+<div class="header">
+    <app-toolbar></app-toolbar>
+</div>
+
+
+<div class="container">
+    <div class="item" *ngFor="let ubication of ubications; index as i">
+        <mat-card>
+            <mat-card-header>
+                <div mat-card-avatar >
+                    <i class="fas fa-home icon_home"></i>
+                </div>
+
+                <mat-card-title>{{nombre}}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-card-subtitle>direccion</mat-card-subtitle>
+                <p>
+                    {{ubication.attributes.address}}
+                </p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button  
+                    (click)="delete_ubication(ubication)" 
+                    mat-raised-button color="warn">
+                    eliminar
+                </button>
+            </mat-card-actions> 
+        </mat-card>
+    </div>      
+</div>

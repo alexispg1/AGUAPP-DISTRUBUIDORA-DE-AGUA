@@ -1,0 +1,30 @@
+<html>
+    <app-toolbar></app-toolbar>
+    <div class="wrapper p-2">
+        <div class="section-title text-center">
+            <h4 class="text-uppercase">Selecciona de tus ubicaciones</h4>
+            <button mat-raised-button color="primary" (click)="nueva_ubicacion_route()">
+                <mat-icon matSuffix>add_location</mat-icon>
+                Agregar nueva ubicación
+            </button>
+        </div>
+        <div class="container mt-3">
+            <mat-card (click)="onChooseUbication(ubicacion.idUbication)" class="mb-2 d-flex pointer" *ngFor="let ubicacion of ubicaciones">
+                <mat-icon matSuffix>place</mat-icon>
+                {{ubicacion.attributes.address}}
+            </mat-card>
+        </div>
+    </div>
+
+    <ngx-spinner bdColor="rgba(63,81,181,0.9)"></ngx-spinner>
+</html>
+
+<div class="container mt-3">
+    <mat-card (click)="onChooseUbication(ubicacion.idUbication)" class="mb-2 d-flex pointer" *ngFor="let ubicacion of ubicaciones">
+        <mat-icon matSuffix>place</mat-icon>
+        {{ubicacion.attributes.address}}
+    </mat-card>
+</div>
+
+<ngx-spinner bdColor="rgba(63,81,181,0.9)"></ngx-spinner>
+

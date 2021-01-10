@@ -1,0 +1,32 @@
+<html>
+	<app-toolbar></app-toolbar>
+	<div class="wrapper p-2">
+	    <div class="section-title text-center">
+	        <h4 class="text-uppercase">Selecciona el conjunto de servicios</h4>
+	    </div>
+	</div>
+	
+    <mat-card style="display:flex;justify-content:center;align-items:center;" 
+				class="mb-2 d-flex text-center pointer" *ngFor="let servicio of servicios">
+
+        <mat-card class="mb-2 d-flex text-center pointer">
+		<img style="width:100px; height: 100px; margin:auto;" 
+		src="https://www.flaticon.es/svg/static/icons/svg/1777/1777282.svg" alt=""> <br>
+		</mat-card>
+
+        <mat-card class="mb-2 d-flex text-center pointer">
+		<h5>{{servicio.attributes.servicio}}</h5> <br>
+		</mat-card>
+
+		<mat-card class="mb-2 d-flex text-center pointer">
+			<span class="text-bold mt-1">Costo: {{servicio.attributes.costo}}</span>
+			<mat-form-field appearance="legacy">
+				<input name="cantidad" [(ngModel)]="this[servicio.id]" #cantidad matInput placeholder="Cantidad">
+				<mat-icon matSuffix>check</mat-icon>
+			</mat-form-field>
+			<button (click)="onAdd(servicio.id, servicio.attributes.costo, cantidad.value)"  mat-raised-button color="primary">Agregar</button>
+		</mat-card>
+	</mat-card>
+	
+	<ngx-spinner bdColor="rgb(63,81,181)"></ngx-spinner>
+</html>

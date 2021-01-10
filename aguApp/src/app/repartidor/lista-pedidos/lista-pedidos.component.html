@@ -1,0 +1,104 @@
+<html>
+  <div>
+    <app-navbar-repartido></app-navbar-repartido>
+  </div>
+
+  <div class="d-flex flex-row justify-content-start flex-wrap">
+    <div class="item" style="width:100%;" *ngFor="let pedido of pedidos; index as i">
+      <div class="card text-white bg-secondary mb-3"  style="width:100%; ">
+       
+        <div class="card-body">
+          
+          <div class="card text-dark bg-light mb-3">
+            <div class="card-body">
+              <div class="d-flex flex-column justify-content-start align-items-start " style="width:100%;">
+                
+                <div class="item">
+                  <div class="d-flex flex-row justify-content-start" style="width:100%;">
+                    <div>
+                      <strong>Cliente : </strong>
+                    </div>
+                    <div>
+                      {{pedido.cliente.name }}{{pedido.cliente.lastName}}
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="item" style="width: 100%;">
+                  <div class="d-flex flex-row justify-content-start flex-wrap " style="width: 100%;">
+                    <div>
+                      <strong>Teléfono móvil :</strong> 
+                    </div>
+                    <div>
+                      <small>{{pedido.cliente.phone}}</small>
+                    </div>
+                  </div>
+                </div>
+              
+                <div class="item" style="width:100%;">
+                  <div class="d-flex flex-row justify-content-start flex-wrap" style="width: 100%;">
+                    <div>
+                      <strong>Dirección :</strong>
+                    </div>
+                    <div>
+                      <small>{{pedido.Orden.address}}</small>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+          <br>
+          <div class="d-flex flex-row justify-content-around" *ngIf="lista_pedidos">
+            <div>
+              <button  
+                type="button" 
+                class="btn btn-primary"
+                (click)="ver_detalles(pedido)">
+                <strong>Ver detalles</strong>
+              </button>
+            </div>
+            <div>
+              <button  
+                type="button" 
+                class="btn btn-success"
+                (click)="cliente_ausente()">
+                <strong>Cliente ausente</strong>
+              </button>
+            </div>
+          </div>
+
+          <div class="d-flex flex-row justify-content-center" *ngIf="lista_pedidos!=true">
+            <div style="width:100%;">
+              <button 
+                style="width:100%;" 
+                type="button" 
+                class="btn btn-primary"
+                (click)="ver_detalles(pedido)">
+                <strong>ver detalles de la orden</strong>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="card-footer" >
+          <div *ngIf="lista_pedidos;else elseBlock">
+            <small class="card-text" >Elija una opción para este pedido</small>
+          </div>
+          <ng-template #elseBlock>
+            <small class="card-text" >Pedido ya Despachado</small>
+          </ng-template>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</html>
+
+
+

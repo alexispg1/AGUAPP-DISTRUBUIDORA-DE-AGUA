@@ -1,0 +1,18 @@
+@media only screen and (max-width:600px){
+   
+    button.dropdown-item:hover{
+        background-color: cornflowerblue;
+    }
+    
+ 
+}
+@media only screen and (min-width:600px){
+    
+    button.dropdown-item:hover{
+        background-color: cornflowerblue;
+    }
+    .dropdown-menu{
+        background-color: red;
+    }
+
+}

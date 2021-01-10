@@ -1,0 +1,72 @@
+html {
+    background: url(../../assets/background.svg) no-repeat fixed center center #fff;
+     /**max-height: 100%;**/
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+@media only screen and (max-width:812px) {
+    .container{
+        display: flex;
+        flex-direction: column;
+        width:100%;
+    }
+    .item{
+        width:100%;
+        margin-top:10%;
+    }
+    mat-form-field{
+        width: 100%;
+    }
+    .container_item{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .son_item{
+        width:100%;
+        margin-top:1px;
+    }
+    button{
+        width:100%;  
+    }
+    
+}
+
+@media only screen and (min-width:812px){
+    .container{
+        display:flex;
+        flex-direction: row;
+        justify-content: center;
+        width:100%;
+    }
+    .item{
+        margin-top:8%;
+        width:35%;
+    }
+    mat-form-field{
+        width:100%;
+    }
+    .container_item{
+        display: flex;
+        flex-direction: row;
+        justify-content:center;
+    }
+    .son_item{
+        width:100%;
+        margin-top: 1px;
+    }
+    button{
+        width:100%;
+    }
+
+}
+
+
+
+
+
+
+

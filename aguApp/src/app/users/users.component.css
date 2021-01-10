@@ -1,0 +1,708 @@
+/* apagina inicio */
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:300,600');
+
+.hider {
+  --background: #1D509F;
+  padding-top: 10px;
+  height: 9%;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+
+h2{
+  color: white;
+}
+
+
+/* navigation styles start here */
+
+.hider {
+  background: var(--background);
+  text-align: center;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+}
+
+/* changed this from the tutorial video to
+   allow it to gain focus, making it tabbable */
+.nav-toggle {
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+}
+
+.nav-toggle:focus ~ .nav-toggle-label {
+  outline: 3px solid rgba(lightblue, .75);
+}
+
+.nav-toggle-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 1em;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  background: #9ED16F; /*color de navicon*/
+  height: 3px;
+  width: 2em;
+  border-radius: 2px;
+  position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  content: '';
+  position: absolute;
+}
+
+.nav-toggle-label span::before {
+  bottom: 7px;
+}
+
+.nav-toggle-label span::after {
+  top: 7px;
+}
+
+nav {
+  position: absolute;
+  text-align: center; /*posicion del menu*/
+  top: 100%;
+  left: 0;
+  background: var(--background); /*color del menu desplegable*/
+  width: 100%;
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 400ms ease-in-out;
+  cursor: pointer;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  margin-bottom: 1em;
+  margin-left: 1em;
+}
+
+nav a {
+  color: white; /*color de opciones*/
+  text-decoration: none;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+}
+
+nav a:hover {
+  color: #9ED16F;
+}
+
+.nav-toggle:checked ~ nav {
+  transform: scale(1,1);
+}
+
+.nav-toggle:checked ~ nav a {
+  opacity: 1;
+  transition: opacity 250ms ease-in-out 250ms;
+}
+
+@media screen and (min-width: 800px) {
+  .nav-toggle-label {
+    display: none;
+  }
+
+  .hider {
+    display: grid;
+    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+  }
+  
+  .logo {
+    grid-column: 1 / 3;
+  }
+  
+  nav {
+    /*// all: unset; /* this causes issues with Edge, since it's unsupported */
+    
+    /* the following lines are not from my video, but add Edge support */
+    position: relative;
+    text-align: left;
+    transition: none;
+    transform: scale(1,1);
+    background: none;
+    top: initial;
+    left: initial;
+    /* end Edge support stuff */
+    
+    grid-column: 3 / 4;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  nav ul {
+    display: flex;
+  }
+  
+  nav li {
+    margin-left: 3em;
+    margin-bottom: 0;
+  }
+  
+  nav a {
+    opacity: 1;
+    position: relative;
+  }
+  
+  nav a::before {
+    content: '';
+    display: block;
+    height: 5px;
+    background: #9ED16F; /*color linea hover letras*/
+    position: absolute;
+    top: -.75em;
+    left: 0;
+    right: 0;
+    transform: scale(0, 1);
+    transition: transform ease-in-out 250ms;
+  }
+  
+  nav a:hover::before {
+    transform: scale(1,1);
+  }
+}
+
+
+
+
+*{
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+/*boton ordena ahora*/
+.myButton {
+	-moz-box-shadow: 4px 5px 17px -7px #a3a3a3;
+	-webkit-box-shadow: 4px 5px 17px -7px #a3a3a3;
+	box-shadow: 4px 5px 17px -7px #a3a3a3;
+	background-color:#9ed16f;
+	-webkit-border-radius:37px;
+	-moz-border-radius:37px;
+	border-radius:37px;
+	border:4px solid #9ed16f;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Verdana;
+	font-size:25px;
+	font-weight:bold;
+	padding:9px 27px;
+	text-decoration:none;
+}
+.myButton:hover {
+	background-color:#9ed16f;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+.container {
+	padding: 60px 0;
+	width: 90%;
+	max-width: 1000px;
+	margin: auto;
+	overflow: hidden;
+}
+
+.title {
+	color: #1D509F;
+	font-size: 30px;
+	text-align: center;
+	margin-bottom: 60px;
+}
+
+/*HEADER*/
+
+header {
+	width:100%;
+	height: 600px;
+	 /* fallback for old browsers */
+	background: #1c92d2;
+	/* Chrome 10-25, Safari 5.1-6 */
+	background: -webkit-linear-gradient(to right, #f2fcfe77, #1c92d271), url(../../assets/portada3.jpg);
+	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: linear-gradient(to right, #f2fcfe79, #1c92d271), url(../../assets/portada3.jpg);
+	background-size: cover;
+	background-attachment: fixed;
+	position: relative;
+}
+
+
+header .texts-header {
+	display: flex;
+	height: 430px;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+}
+
+.texts-header h1 {
+	font-size: 50px;
+	color: #fff;
+}
+
+.texts-header h2 {
+	font-size: 30px;
+	font-weight: 300;
+	color: #fff;
+}
+.wave {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+/* About us */
+
+main .about-us {
+	padding: 30px 0 60px 0;
+}
+
+ .container-about-us {
+ 	display: flex;
+ 	justify-content: space-evenly;
+ }
+
+ .about-us .container-texts{
+ 	width: 58%
+ }
+
+ .container-texts h3 {
+ 	margin-bottom: 15px;
+ }
+
+.container-texts h3 span {
+	background: #9ED16F;
+	color: #fff;
+	border-radius: 50%;
+	display: inline-block;
+	text-align:center;
+	width: 35px;
+	height: 35px;
+	padding: 3px;
+	box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+	margin-right: 15px;
+}
+
+.container-texts p {
+	padding: 0px 0px 30px 15px;
+	font-weight: 300;
+	text-align: justify;
+}
+
+/* Gallery */
+.portafolio {
+	background: #fff;
+}
+
+.gallery-port {
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+}
+
+.imagen-port {
+	width: 22%;
+	margin-bottom: 10px;
+	overflow: hidden;
+	position: relative;
+	cursor: pointer;
+	box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+}
+
+.imagen-port > img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+
+.hover-gallery {
+	position: absolute;
+	width: 100%;
+	height:100%;
+	top: 0;
+	transform: scale(0);
+	background:#4141419c;
+	transition: transform .5s;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.hover-gallery img {
+	width: 50px;
+}
+
+.hover-gallery p{
+	color: #fff;
+	font-size: 25px;
+}
+.imagen-port:hover .hover-gallery {
+	transform: scale(1);
+}
+
+
+/* Clients */
+
+.cards {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.cards .card {
+	background: #9ed16fdc;
+	display: flex;
+	width: 46%;
+	height: 200px;
+	align-items: center;
+	justify-content: space-evenly;
+	border-radius: 5px;
+	box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.6);
+	margin-left: 5px;
+}
+
+.cards .card img {
+	width: 90px;
+	height: 90px;
+	object-fit: cover;
+	border: 3px solid #fff;
+	border-radius: 50%;
+	display: block;
+}
+
+.cards .card > .content-text-card {
+	width: 60%;
+	color: #fff;
+}
+.cards .card > .content-text-card p{
+	font-weight: 300;
+	padding-top: 5px;
+}
+
+/* Our team */
+
+.about-services {
+	background: #f2f2f2;
+	padding-bottom: 30px;
+}
+
+.service-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.service-ind {
+	width: 20%;
+	text-align: center;
+}
+.service-ind img {
+	width: 90%;
+}
+
+.service-ind h3 {
+	margin: 15px 0;
+}
+.service-ind p {
+	font-weight: 300;
+	text-align: justify;
+}
+
+/* Footer */
+
+footer {
+	background: #414141;
+	padding: 60px 0 30px 0;
+	margin: auto;
+	overflow: hidden;
+}
+
+.container-footer {
+	display: flex;
+	width: 90%;
+	justify-content: space-evenly;
+	margin:auto;
+	padding-bottom: 50px;
+	border-bottom: 1px solid #ccc;
+}
+
+.content-foo {
+	text-align: center;
+}
+
+.content-foo h4 {
+	color: #fff;
+	border-bottom: 3px solid #9ED16F;
+	padding-bottom: 5px;
+	margin-bottom: 10px;
+}
+.content-foo p {
+	color: #ccc;
+}
+
+.final-title {
+	text-align: center;
+	font-size: 24px;
+	margin: 20px 0 0 0;
+	color: #9e9797;
+}
+
+@media screen and (max-width: 900px){
+	header{
+		background-position: center;
+	}
+	.container-about-us{
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.about-us .container-texts {
+		width: 90%;
+		margin-top: 10px;
+	}
+	.imagen-about-us {
+		width: 90%;
+		margin-bottom: 20px;
+	}
+	/* Gallery */
+
+	.imagen-port {
+		width: 44%;
+	}
+
+	/* Clients */
+	.cards {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.cards .card {
+		width: 90%;
+		margin-bottom: 30px
+	}
+	/*
+	.cards .card:first-child {
+		margin-bottom: 30px;
+	}*/
+
+
+	/* Service Container*/
+	.service-container {
+		justify-content: center;
+		flex-direction: column;
+	}
+	.service-ind {
+		width: 100%;
+		text-align: center;
+	}
+	.service-ind:nth-child(1), .service-ind:nth-child(2){
+		margin-bottom: 60px;
+	}
+	.service-ind img {
+		width: 90%;
+	}
+}
+
+@media screen and (max-width:500px) {
+	nav {
+		text-align: center;
+		padding: 30px 0 0 0;
+	}
+	nav > a {
+		margin-right: 5px;
+	}
+
+	.texts-header h1 {
+		font-size: 35px;
+	}
+	.texts-header h2 {
+		font-size: 20px;
+	}
+
+	/* About us*/
+	.imagen-about-us{
+		margin-bottom: 60px;
+		width: 99%;
+	}
+	.about-us .container-texts {
+		width: 95%;
+	}
+
+	/* Gallery */
+
+	.imagen-port{
+		width: 95%;
+	}
+
+	.hover-gallery p{
+		color: #fff;
+		font-size: 10px;
+	}
+
+
+	/* Clients */
+
+	.cards .card {
+		height: 450px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.cards .card img {
+		width: 90px;
+		height: 90px;
+	}
+
+	/* Footer */
+	.container-footer {
+		flex-direction: column;
+		border: none;
+	}
+	.content-foo {
+		margin-bottom: 20px;
+		text-align: center;
+	}
+	.content-foo h4 {
+		border:none;
+	}
+	.content-foo p {
+		color: #ccc;
+		border-bottom: 2px solid #f2f2f2;
+		padding-bottom: 20px;
+	}
+
+	.final-title {
+		font-size:15px;
+	}
+}
+
+/*PHONE*/
+@media only screen and (max-width:812px){
+    .card_main{
+        margin: auto;
+        display:block;
+    }
+    .icon_profile{
+        font-size:30px;
+        text-align:center;   
+    }
+    .card_profile{
+        display: block;
+        margin-top:auto;
+        margin-top:0.5rem;
+    }
+    .button_profile{ 
+        width:100%;
+    }
+    .icon_deliveries{
+        font-size: 30px;
+        text-align:center;
+    }
+    .card_deliveries{
+        margin-top:auto;
+        margin-top:1rem;
+        display:block;
+        
+    }
+    .button_deliveries{
+        width:100%;
+    }
+    .icon_coupon_discount{
+        font-size:30px;
+        text-align:center;
+    }
+    .card_coupon{
+        margin-top:auto;
+        margin-top:1rem;
+        display:block;
+    }
+    .button_coupon{
+        width:100%;
+    }
+
+  
+}
+
+
+/*WEB*/
+@media only screen and (min-width:812px) {
+    .card_main{
+        margin-top:auto;
+        margin-top:1rem;
+        display:block;
+        margin-left:30%;
+    }
+    .card_profile{
+        width:50%;
+    }
+    .icon_profile{
+        font-size:40px;
+        text-align:center;
+    }
+    .button_profile{
+        display:block;
+        width:100%;
+        margin-top:0.5rem;
+    }
+    .card_deliveries{
+        margin-top:1rem;
+        width:50%;
+    }
+    .icon_deliveries{
+        font-size:40px;
+        text-align:center;
+    }
+    .button_deliveries{
+        width:100%;
+        display:block;
+        margin-top:0.5rem;
+    }
+    .card_coupon{
+        margin-top:1rem;
+        width:50%;
+    }
+    .icon_coupon_discount{
+        font-size:40px;
+        text-align:center;
+    }
+    .button_coupon{
+        display:block;
+        margin-top:0.5rem;
+        width:100%;
+    }
+
+    
+}

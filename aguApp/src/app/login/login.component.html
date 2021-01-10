@@ -1,0 +1,67 @@
+<html>
+  <div class="head">
+    <app-toolbar></app-toolbar>
+  </div>
+
+  <body>  
+    <div class="container">
+      
+      <div class="item">
+        <mat-card>
+          <form [formGroup]="profile">
+
+            <mat-form-field appearance="fill">
+              <mat-label>número o dirección electronica</mat-label>
+              <input matInput type="text" formControlName="email" >
+              <mat-error *ngIf="isValidField('password')">
+                {{getErrorMessage("password")}}
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>contraseña</mat-label>
+              <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">      
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+              <mat-error *ngIf="isValidField('password')">
+                {{getErrorMessage("password")}}
+              </mat-error>
+            </mat-form-field>
+            
+            <div class="container_links">
+              <div class="item_links">
+                <p><a  [routerLink]="['/forgotPassword']" > olvido su contraseña ?</a></p>
+              </div>
+              <div class="item_links">
+                <p ><a  [routerLink]="['/registerUser']" > crear cuenta</a></p>
+              </div>
+            </div>
+            <div>
+              <button class="button_login" (click)="submitForm()" mat-raised-button color="primary">Ingresar</button>
+              <mat-error *ngIf="valid" class="text">
+                debe de llenar los campos
+              </mat-error>
+            </div>
+            
+          
+          </form>
+        
+        </mat-card>
+
+        <div class="container_social_medias">
+          <mat-card>
+            <div id="Google">
+              <button (click)="login_with_Google()" class="social_medias_buttons" mat-raised-button><i class="fab fa-google" id="Google"></i> Iniciar sesión con Google</button>
+            </div>
+            <div id="Facebok">
+              <button (click)="login_with_Facebook()" class="social_medias_buttons" mat-raised-button><i class="fab fa-facebook" id="Facebook"></i> Iniciar sesión con Facebook</button>
+            </div>
+          </mat-card>
+        </div>
+
+      </div>
+    </div>
+  </body>
+
+</html>

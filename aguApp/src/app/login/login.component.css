@@ -1,0 +1,106 @@
+body {
+    background: url(../../assets/background.svg) no-repeat fixed center center #fff;
+     /**max-height: 100%;**/
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+html {
+    overflow-y: hidden;
+    overflow-x: hidden;
+ }
+
+@media only screen and (max-width:812px) {
+    html {
+      background-position:center;
+    }
+    .container{
+        display:block;
+        margin-top:auto;
+        width:100%;
+    }
+    .item{
+        width:100%;
+    }
+    mat-card{
+        display:block;
+    }
+    mat-form-field{
+        width:100%;
+    }
+    .container_links{
+        display:flex;
+        flex-direction:row;
+        justify-content:space-between;
+    }
+    .button_login{
+        width:100%;
+    }
+    .container_social_medias{
+        margin-top:1px;
+    }
+    #Google{
+        background:white;
+        color: #dd4b39;
+        font-size:15px;
+    }
+    #Facebook{
+        background:white;
+        color: #3B5998;
+        font-size:15px;
+    }
+    .social_medias_buttons{
+        width:100%;
+        margin-top:1.5px;
+    }
+    .text{
+        text-align:center;
+    }
+}
+
+@media only screen and (min-width:812px){
+    .container{
+        display:flex;
+        flex-direction:row;
+        justify-content:center;
+        width:100%;
+    }
+    .item{
+        margin-top:10px;
+        border-color: cornflowerblue solid 4px;
+    }
+    mat-card{
+        display:block;
+    }
+    mat-form-field{
+        width:100%;
+    }
+    .container_links{
+        display:flex;
+        flex-direction:row;
+        justify-content:space-between;
+    }
+    .button_login{
+        width:100%;
+    }
+    .container_social_medias{
+        margin-top:3px;
+    }
+    #Google{
+        background:white;
+        color: #dd4b39;
+        font-size:25px;
+    }
+    #Facebook{
+        background:white;
+        color: #3B5998;
+        font-size: 25px;   
+    }
+    .social_medias_buttons{
+        width:100%;
+        margin-top:1.5px;
+    }
+
+}

@@ -1,0 +1,53 @@
+<html>
+<mat-toolbar>
+    <mat-toolbar-row>
+      <span class="example-spacer"></span>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <!--<mat-icon>menu</mat-icon>-->
+      </button>
+      <span>
+        <h2>Lista de proveedores</h2>
+      </span>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+
+ <div class="container">
+        <div class="item">
+            <mat-card id="card">
+              <div class="panel panel-primary">
+                <div class="panel-heading">
+                 <!--<h2>Lista de proveedores</h2>-->
+                </div>
+                <button type="button" color="primary" class="btn btn-success" (click)="add()">Agregar</button>
+                <button type="button" color="primary" class="btn btn-danger" (click)="menu()">Regresar</button>
+                <div class="panel-body">
+                  <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th>Proveedor</th>
+                        <th>Correo</th>
+                        <th>Telefono</th>
+                        <th>Direccion</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let supplier of datos">
+                        <td>{{supplier.nombre}}</td>
+                        <td>{{supplier.correo}}</td>
+                        <td>{{supplier.telefono}}</td>
+                        <td>{{supplier.direccion}}</td>
+                        <td><button (click)="deleteSupplier(supplier.id)" class="btn btn-danger">Borrar</button>
+                            <button (click)="updateSupplier(supplier.id)" class="btn btn-info" style="margin-left: 10px">Editar</button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </mat-card>
+       </div>
+  </div>
+
+
+</html>

@@ -1,0 +1,13 @@
+.mat-toolbar{
+  background: #1D509F;
+  color: #9ED16F;
+}
+a {
+	color:#fff;
+	text-decoration: none;
+	line-height:50px;
+}
+a:hover,a.active{
+    background: none;
+    color: #C2E6F9;
+  }

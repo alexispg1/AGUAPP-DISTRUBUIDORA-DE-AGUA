@@ -1,0 +1,30 @@
+html {
+    
+     /**max-height: 100%;**/
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+body{
+    margin: 15px;
+    padding: 0;
+}
+mat-form-field {
+    width: 100%;
+  }
+  
+ul {
+  text-align: center;
+}
+
+.map {
+  position: absolute;
+    margin: 0px auto;
+    top: 9%;
+    left: 0%;
+    right: 0%;
+    bottom: 0px auto; 
+    height: 85%;
+    width: 85%;
+}

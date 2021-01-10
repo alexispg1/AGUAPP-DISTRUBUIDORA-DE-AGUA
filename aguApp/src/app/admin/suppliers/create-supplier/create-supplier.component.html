@@ -1,0 +1,56 @@
+<html>
+  <mat-toolbar>
+    <mat-toolbar-row>
+      <span class="example-spacer"></span>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <!--<mat-icon>menu</mat-icon>-->
+      </button>
+      <span>
+        <h2>Agregar proveedor</h2>
+      </span>
+    </mat-toolbar-row>
+</mat-toolbar>
+ <br><br>
+ <div class="container">
+        <div class="item">
+            <mat-card id="card">
+
+              <!--<h3>Agregar Proveedor</h3>-->
+              <div [hidden]="submitted" style="width: 100%;">
+                <form (ngSubmit)="onSubmit()">
+                  <div class="form-group">
+                    <label for="name">Proveedor</label>
+                    <input type="text" class="form-control" id="nombre" required [(ngModel)]="supplier.nombre" name="nombre">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="name">Correo</label>
+                    <input type="text" class="form-control" id="correo" required [(ngModel)]="supplier.correo" name="correo">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="name">Telefono</label>
+                    <input type="text" class="form-control" id="telefono" required [(ngModel)]="supplier.telefono" name="telefono">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="name">Dirección</label>
+                    <input type="text" class="form-control" id="direccion" required [(ngModel)]="supplier.direccion" name="direccion">
+                  </div>
+
+                  <button type="submit" class="btn btn-success">Agregar</button>
+                  <button type="button" color="warning" class="btn btn-danger" (click)="gotoList()">Regresar</button>
+                </form>
+              </div>
+
+              <div [hidden]="!submitted">
+                <h4>Proveedor agregado con éxito</h4>
+                <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
+              </div>
+            </mat-card>
+       </div>
+  </div>
+
+
+
+</html>

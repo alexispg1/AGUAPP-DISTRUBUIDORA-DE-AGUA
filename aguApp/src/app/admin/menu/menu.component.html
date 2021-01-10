@@ -1,0 +1,53 @@
+<html>
+    <div class="header">
+        <app-toolbar></app-toolbar>
+    </div>
+
+    <main>
+        <section class="about-services">
+            <div class="container">
+                <h2 class="title">selecciona una opción </h2>
+                <br><br>
+                <div class="service-container">
+                    <div class="service-ind">
+                        <img src="../../assets/nuevoRepartidor.png" alt="">
+                        <button  
+                            mat-raised-button 
+                            color="primary"
+                            (click)="add_deliver_man()">
+                            Nuevo repartidor
+                        </button>
+                    </div>
+                    <div class="service-ind">
+                        <img src="../../assets/repartidores.png" alt="">
+                         <button  
+                            mat-raised-button 
+                            color="primary"
+                            (click)="list_deliver_man()">
+                            listar repartidores
+                        </button>
+                    </div>
+                    <div class="service-ind">
+                        <img src="../../assets/proveedores.png" alt="">
+                        <button 
+                            mat-raised-button 
+                            color="primary"
+                            (click)="proveedores()">
+                            Proveedores
+                        </button>
+                    </div>
+                    <div class="service-ind">
+                        <img src="../../assets/insumos.png" alt="">
+                         <button 
+                            mat-raised-button 
+                            color="primary"
+                            (click)="insumos()">
+                            Insumos
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</html>

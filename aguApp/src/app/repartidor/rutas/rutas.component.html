@@ -1,0 +1,15 @@
+<html>
+
+	<div>
+		<app-navbar-repartido></app-navbar-repartido>
+	</div>
+
+   <div class="map"
+	  leaflet
+	  [leafletOptions]="options"
+	  [leafletLayers]="layers"
+	  (leafletMapReady)="onMapReady($event)"
+	  [leafletLayersControl]="layersControl">
+	</div>
+
+</html>

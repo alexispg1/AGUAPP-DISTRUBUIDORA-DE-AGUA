@@ -1,0 +1,70 @@
+<html>
+<app-toolbar></app-toolbar>
+
+<div class="card">
+    <mat-card >
+        <div>
+            <form [formGroup]="(user)" (ngSubmit)="sending_data()" class="example-form">  
+                <mat-card class="tarjeta" style="background-color: yellow">
+                    <mat-card-header>
+                        <mat-card-title>Datos del usuario</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <p>Gracias {{name_value}} por registrarte, esto nos permitira crearte un perfil 
+                           con tu correo {{email_value}} para guardar tus datos y facilitar la compra.</p>
+                    </mat-card-content>
+                </mat-card>
+                <div >
+                    <mat-form-field appearance="fill">
+                        <mat-label>apellidos</mat-label>
+                        <input matInput type="phone" formControlName="lastName">
+                        <mat-error *ngIf="isValidField('lastName')">
+                            {{getErrorMessage("lastName")}}
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div >
+                    <mat-form-field appearance="fill">
+                        <mat-label>número de teléfono</mat-label>
+                        <input matInput type="phone" formControlName="cellphone">
+                        <mat-error *ngIf="isValidField('cellphone')">
+                            {{getErrorMessage("cellphone")}}
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div>
+                    <mat-form-field appearance="fill">
+                        <mat-label>contraseña</mat-label>
+                        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                        <mat-error *ngIf="isValidField('password')">
+                            {{getErrorMessage("password")}}
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+    
+                <div class="input">
+                    <mat-form-field appearance="fill">
+                        <mat-label>confirmar contraseña</mat-label>
+                        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password_confirmation">
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                        <mat-error *ngIf="isValidField('password_confirmation')">
+                            {{getErrorMessage("password_confirmation")}}
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                
+                <div>
+                    <button class="button_register_login" type="submit" mat-raised-button color="primary">Completar Registro</button>
+                </div>
+                
+            </form>
+        </div>
+    </mat-card>
+</div>
+</html>

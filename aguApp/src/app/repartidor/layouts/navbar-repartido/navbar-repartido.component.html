@@ -1,0 +1,64 @@
+<nav class="navbar navbar-dark bg-primary" >
+    
+
+    <div class="btn-group">
+        
+        <button 
+            class="btn bmd-btn-fab bmd-btn-fab-sm dropdown-toggle" 
+            type="button" 
+            id="ex2" 
+            data-toggle="dropdown" 
+            aria-haspopup="true" 
+            aria-expanded="false">
+            <i class="fas fa-user-alt " style="font-size: 20px"></i>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="mw1">
+            <button 
+                (click)="historial_de_ventas()"
+                class="dropdown-item" 
+                type="button">
+                Historial de ventas
+            </button>
+            <button 
+                (click)="ajustes()"
+                class="dropdown-item" 
+                type="button">
+                cerrar sesión
+            </button>
+        </div>
+    </div>
+
+    <div>
+        <div class="order-sm-4" style="font-size: 20px;">
+            <i 
+                class="far fa-list-alt"
+                (click)="lista_pedidos()">
+            </i>
+        </div>  
+    </div>
+
+    <div>
+        <div class="order-sm-4" style="font-size: 20px;">
+            <i 
+                class="fas fa-map-marker-alt"
+                (click)="rutas()"
+                >
+            </i>
+        </div> 
+    </div>
+
+    <div>
+        <div class="order-sm-4" style="font-size: 20px;">
+            <i  
+                class="fas fa-dolly-flatbed"
+                (click)="medio_de_trasporte()"
+                >
+            </i>
+        </div>
+    </div>
+    
+   
+    
+   
+   
+</nav>

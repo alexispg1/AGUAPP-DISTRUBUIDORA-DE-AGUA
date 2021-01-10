@@ -1,0 +1,89 @@
+<html>
+    <div>
+        <app-navbar-repartido></app-navbar-repartido>
+    </div>
+
+    <div class="d-flex  flex-row ">
+        <div class="item">
+            <div class="card bg-light mb-3" style="max-width:100%;">
+                <div class="card-header">Servicios</div>
+                <div class="card-body">
+                    <div *ngFor="let servicio of servicios; index as i">
+
+                        <div class="container d-flex flex-row justify-content-start">
+                            <div class="item  d-flex flex-row justify-content-start" style="margin-top:1px;">
+                                <strong>servicio : </strong><p class="card-text">{{servicio.descripcion}}</p>
+                            </div>
+                            <div class="item d-flex flex-row justify-content-start " style="margin-top:1px;">
+                                <strong>costo :</strong><div class="card-tex">{{servicio.costo}}</div>
+                            </div>
+                            <div class="item d-flex flex-row justify-content-start" style="margin-top:1px;">
+                                <strong>cantidad : </strong><div class="card-tex">{{servicio.cantidad}}</div>
+                            </div>
+                            <div class="item d-flex flex-row justify-content-start" style="margin-top:1px;">
+                                <strong>subtotal : </strong><div class="card-tex">{{servicio.subtotal}}</div>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                    <br>
+                    <div class="d-flex flex-row justify-content-around item" *ngIf="estatus!='creada'">
+                        <div>
+                            <button 
+                                type="button" 
+                                class="btn btn-secondary"
+                                (click)="lista_ordenes()"
+                                >
+                                Lista ordenes
+                            </button>
+                        </div>
+                        <div>
+                            <button 
+                                type="button" 
+                                class="btn btn-success"
+                                (click)="despachar_orden()"
+                                >
+                                Despachar orden
+                            </button>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row justify-content-around item"  *ngIf="estatus==='creada'">
+                        <div>
+                            <button 
+                                type="button" 
+                                class="btn btn-secondary"
+                                (click)="historial_pedidos()"
+                                >
+                                Historial de pedidos
+                            </button>
+                        </div>
+                        <div>
+                            <button 
+                                type="button" 
+                                class="btn btn-success"
+                                (click)="lista_ordenes()"
+                                >
+                                Lista ordenes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="card-footer bg-transparent border-success">
+                    <div class="container d-flex flex-row">
+                        <div>
+                           TOTAL
+                        </div>
+                        <div>
+                            <i class="fas fa-dollar-sign"></i> {{Total}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+    
+
+
+</html>

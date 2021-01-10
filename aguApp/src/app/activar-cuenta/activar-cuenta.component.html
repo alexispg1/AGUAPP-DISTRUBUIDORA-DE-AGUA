@@ -1,0 +1,36 @@
+<html>
+    <diV class="header">
+        <app-toolbar></app-toolbar>
+    </diV>
+
+    <div class="container ">
+        <div class="item">
+            <mat-card>
+                <mat-card-subtitle>cuenta inactiva</mat-card-subtitle>
+                <form [formGroup]="profile" (ngSubmit)="send_data()">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Dirección electrónica</mat-label>
+                        <input 
+                            matInput 
+                            placeholder="usuario@ejemplo.com" 
+                            formControlName="email"
+                        >
+                        <mat-icon matSuffix>mail_outline</mat-icon>
+                        <mat-error *ngIf="isValidField('email')">
+                            {{getErrorMessage("email")}}
+                        </mat-error>
+                    </mat-form-field>
+                    <div>
+                        <button
+                            type="submit"
+                            mat-raised-button 
+                            color="primary">
+                            enviar correo de activacion
+                        </button>
+                    </div>
+                </form>
+            </mat-card>
+        </div>
+    </div>
+
+</html>

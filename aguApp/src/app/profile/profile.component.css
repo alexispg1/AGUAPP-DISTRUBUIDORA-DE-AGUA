@@ -1,0 +1,93 @@
+html {
+    background: url(../../assets/background.svg) no-repeat fixed center center #fff;
+     /**max-height: 100%;**/
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+html {
+   
+    overflow-x: hidden;
+ }
+
+
+@media only screen and (max-width:812px) {
+    .container{
+        display: flex;
+        flex-direction:column;
+        width:100%;
+    }
+    .item{
+        margin:auto;
+        width:100%;
+        margin-top:2px;
+    }
+    .container_items{
+        display: flex;
+        flex-direction:row;
+        justify-content:space-between;
+    }
+    mat-form-field{
+        width:100%;
+    }
+    .icon{
+        font-size:17px;
+        color: red;
+    }  
+    .container_button{
+        display: flex;
+        flex-direction:row;
+    }
+    .item_button{
+        width: 100%;
+    }
+    button{
+        width: 100%;
+    }
+}
+
+
+@media only screen and (min-width:812px){
+
+    .container{
+        width:100%;
+        height:100%;
+        display: flex;
+        flex-direction:row;
+        justify-content:center;
+        align-items:flex-start;
+    }
+    .item{
+        width:33%;
+        height:40%;
+        margin-top:10px;
+        margin-right:3%;
+    }
+    .container_items{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    mat-form-field{
+       width:100%; 
+    }
+    .icon{
+        font-size:17px;
+        color: red;
+    }
+    .container_button{
+        display: flex;
+        flex-direction: row;
+        justify-content:flex-start;
+    }
+    .item_button{
+        width: 100%;
+    }
+    button{
+        width:100%;
+    }
+     
+  
+}

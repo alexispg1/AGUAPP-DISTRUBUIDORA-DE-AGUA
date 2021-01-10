@@ -1,0 +1,32 @@
+<html>
+<app-toolbar></app-toolbar>
+<div class="flex-container">
+    <div class="flex-item">
+            <table class="table">
+
+                <thead>
+                    <tr>
+                        <th>nombre</th>
+                        <th>apellido</th>
+                        <th>direccion</th>
+                        <th>eliminar</th>
+                        <th>actualizar</th>
+                    </tr>
+                </thead>
+                <tr *ngFor="let order of order_list; index as i">
+                    <td>{{order.nombre}}</td>
+                    <td>{{order.apellido}}</td>
+                    <td>{{order.direccion}}</td> 
+                    <td>
+                        <i id="icon_delete"(click)="delete(order,i)" class="fas fa-trash-alt"></i>
+                    </td> 
+                    <td>
+                        <i id="icon_update" (click)="update(order,i)" class="fas fa-pen"></i>
+                    </td>
+                </tr>
+
+            </table> 
+    </div>
+</div>
+
+</html>

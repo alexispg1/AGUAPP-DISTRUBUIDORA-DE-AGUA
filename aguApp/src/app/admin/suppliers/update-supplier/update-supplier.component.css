@@ -1,0 +1,22 @@
+html {
+    background: url(../../../../assets/background.svg) no-repeat fixed center center #fff;
+     /**max-height: 100%;**/
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.mat-toolbar{
+  background: #1D509F;
+  color: #fff;
+}
+a {
+    color:#fff;
+    text-decoration: none;
+    line-height:50px;
+}
+a:hover,a.active{
+    background: none;
+    color: #fff;
+  }
